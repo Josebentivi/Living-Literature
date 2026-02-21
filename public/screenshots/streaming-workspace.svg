@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Pensador streaming workspace screenshot</title>
+  <desc id="desc">A product capture showing sidebar navigation, a streaming assistant response, and an action checklist.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e2a39" />
+      <stop offset="60%" stop-color="#114255" />
+      <stop offset="100%" stop-color="#1d5f6f" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fdff" />
+      <stop offset="100%" stop-color="#eef6f8" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)" />
+  <rect x="24" y="24" width="1232" height="752" rx="22" fill="#0a1d29" opacity="0.55" />
+  <rect x="48" y="48" width="240" height="704" rx="18" fill="#113345" />
+  <text x="78" y="94" fill="#d4edf1" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Pensador</text>
+  <rect x="72" y="132" width="192" height="52" rx="12" fill="#154d61" />
+  <text x="92" y="165" fill="#edf8fb" font-size="21" font-family="Segoe UI, Arial, sans-serif">Home</text>
+  <text x="92" y="225" fill="#b9d6de" font-size="20" font-family="Segoe UI, Arial, sans-serif">Research</text>
+  <text x="92" y="275" fill="#b9d6de" font-size="20" font-family="Segoe UI, Arial, sans-serif">Library</text>
+  <text x="92" y="325" fill="#b9d6de" font-size="20" font-family="Segoe UI, Arial, sans-serif">How To Use</text>
+  <rect x="72" y="548" width="192" height="150" rx="14" fill="#102f40" />
+  <text x="92" y="585" fill="#d7edf2" font-size="19" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Start Using Pensador</text>
+  <text x="92" y="617" fill="#b8d3db" font-size="16" font-family="Segoe UI, Arial, sans-serif">Streaming + tools in</text>
+  <text x="92" y="640" fill="#b8d3db" font-size="16" font-family="Segoe UI, Arial, sans-serif">one practical workflow.</text>
+  <rect x="314" y="48" width="918" height="704" rx="18" fill="url(#panel)" />
+  <text x="350" y="102" fill="#143341" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Campaign messaging sprint</text>
+  <rect x="350" y="132" width="846" height="52" rx="12" fill="#ffffff" />
+  <text x="375" y="165" fill="#4d6671" font-size="18" font-family="Segoe UI, Arial, sans-serif">Prompt: create a launch message hierarchy for Free, Pro, and Max tiers...</text>
+  <rect x="350" y="218" width="540" height="314" rx="14" fill="#ffffff" />
+  <text x="374" y="256" fill="#0f2d3a" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Streaming response</text>
+  <rect x="374" y="278" width="492" height="1" fill="#d6e5ea" />
+  <text x="374" y="318" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">1. Core promise: Think faster, decide with evidence.</text>
+  <text x="374" y="352" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">2. Supporting proof: tools + structured reasoning + tier depth.</text>
+  <text x="374" y="386" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">3. CTA: Start free, upgrade when complexity grows.</text>
+  <text x="374" y="430" fill="#143341" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Generating next section...</text>
+  <rect x="374" y="448" width="220" height="18" rx="9" fill="#e6f1f4" />
+  <rect x="374" y="556" width="540" height="166" rx="14" fill="#ffffff" />
+  <text x="374" y="595" fill="#0f2d3a" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Action checklist</text>
+  <text x="374" y="629" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">- Finalize metadata, canonical, and sitemap paths</text>
+  <text x="374" y="658" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">- Validate CTA UTM links and event tracking</text>
+  <text x="374" y="687" fill="#3b5965" font-size="17" font-family="Segoe UI, Arial, sans-serif">- Publish and monitor first 72 hours</text>
+  <rect x="922" y="218" width="274" height="504" rx="14" fill="#ffffff" />
+  <text x="946" y="256" fill="#0f2d3a" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Context</text>
+  <text x="946" y="291" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">Mode: Pro</text>
+  <text x="946" y="319" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">Tools: Search, Analysis</text>
+  <text x="946" y="347" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">Intent: Conversion</text>
+  <rect x="946" y="374" width="226" height="1" fill="#d6e5ea" />
+  <text x="946" y="408" fill="#0f2d3a" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Key outputs</text>
+  <text x="946" y="437" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">- Hero variants</text>
+  <text x="946" y="463" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">- Tier positioning</text>
+  <text x="946" y="489" fill="#3b5965" font-size="16" font-family="Segoe UI, Arial, sans-serif">- Launch checklist</text>
+  <rect x="946" y="536" width="226" height="52" rx="10" fill="#12869a" />
+  <text x="968" y="569" fill="#ffffff" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Export Brief</text>
+</svg>

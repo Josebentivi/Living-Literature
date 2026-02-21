@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 255 255 255;
+  --surface-muted: 243 244 246;
+  --text: 17 24 39;
+  --text-subtle: 75 85 99;
+  --accent: 37 99 235;
+  --accent-strong: 29 78 216;
+  --accent-warm: 31 41 55;
+}
+
+html.dark {
+  --surface: 2 6 23;
+  --surface-muted: 15 23 42;
+  --text: 243 244 246;
+  --text-subtle: 209 213 219;
+  --accent: 52 211 153;
+  --accent-strong: 16 185 129;
+  --accent-warm: 6 95 70;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-emerald-500/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      "Avenir Next",
+      "Trebuchet MS",
+      "Segoe UI",
+      sans-serif;
+    color: rgb(var(--text));
+    min-height: 100vh;
+  }
+
+  html:not(.dark) body {
+    background-color: #eff6ff;
+    background-image: linear-gradient(to bottom right, #eff6ff 0%, #e0e7ff 100%);
+  }
+
+  html.dark body {
+    background-color: #020617;
+    background-image: linear-gradient(
+      to bottom right,
+      #020617 0%,
+      rgba(2, 44, 34, 0.3) 50%,
+      #020617 100%
+    );
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family:
+      "Sora",
+      "Avenir Next",
+      "Trebuchet MS",
+      sans-serif;
+  }
+
+  .surface-card {
+    @apply rounded-lg border border-gray-200 bg-white shadow-sm backdrop-blur dark:border-emerald-500/10 dark:bg-slate-950/30;
+  }
+
+  .chat-message-user {
+    @apply border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 dark:border-emerald-500/15 dark:from-slate-950 dark:to-emerald-950/30;
+  }
+
+  .chat-message-assistant {
+    @apply border border-gray-200 bg-white dark:border-emerald-500/10 dark:bg-slate-950/30;
+  }
+
+  .section-heading {
+    @apply font-display text-2xl font-semibold tracking-tight text-text sm:text-3xl;
+  }
+
+  .section-lead {
+    @apply mt-3 max-w-3xl text-sm leading-6 text-text-subtle sm:text-base;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #052e16;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #065f46;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 650ms cubic-bezier(0.2, 0.76, 0.2, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 450ms ease-out both;
+}
+
+.theme-icon-light {
+  display: none;
+}
+
+html.dark .theme-icon-light {
+  display: block;
+}
+
+html.dark .theme-icon-dark {
+  display: none;
+}
