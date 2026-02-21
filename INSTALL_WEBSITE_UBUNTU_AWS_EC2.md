@@ -171,7 +171,7 @@ How to get real values from DuckDNS:
 4. On EC2, run the block below and replace the token value.
 
 ```bash
-DUCKDNS_SUBDOMAIN="literaturaviva"
+DUCKDNS_SUBDOMAIN="livingliterature"
 DUCKDNS_TOKEN="PASTE_REAL_DUCKDNS_TOKEN_HERE"
 EC2_PUBLIC_IP="$(curl -s https://checkip.amazonaws.com | tr -d '\n')"
 
@@ -180,7 +180,7 @@ echo "IP: ${EC2_PUBLIC_IP}"
 ```
 
 ```bash
-DUCKDNS_SUBDOMAIN="literaturaviva"
+DUCKDNS_SUBDOMAIN="livingliterature"
 DUCKDNS_TOKEN="a7c4d0ad-114e-40ef-ba1d-d217904a50f2"
 EC2_PUBLIC_IP="$(curl -s https://checkip.amazonaws.com | tr -d '\n')"
 
@@ -195,7 +195,7 @@ curl "https://www.duckdns.org/update?domains=${DUCKDNS_SUBDOMAIN}&token=${DUCKDN
 ```
 
 ```bash
-curl "https://www.duckdns.org/update?domains=${literaturaviva}&token=$a7c4d0ad-114e-40ef-ba1d-d217904a50f2&ip=$54.196.142.214"
+curl "https://www.duckdns.org/update?domains=${livingliterature}&token=$a7c4d0ad-114e-40ef-ba1d-d217904a50f2&ip=$54.196.142.214"
 ```
 
 Expected output: `OK`
@@ -248,7 +248,7 @@ sudo chmod 700 /usr/local/bin/duckdns-update.sh
 sudo tee /usr/local/bin/duckdns-update.sh >/dev/null <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
-DOMAIN="literaturaviva"
+DOMAIN="livingliterature"
 TOKEN="a7c4d0ad-114e-40ef-ba1d-d217904a50f2"
 curl -fsS "https://www.duckdns.org/update?domains=${DOMAIN}&token=${TOKEN}&ip="
 EOF
@@ -316,7 +316,7 @@ sudo certbot certonly --standalone \
 ```bash
 sudo systemctl stop nginx
 sudo certbot certonly --standalone \
-  -d literaturaviva.duckdns.org \
+  -d livingliterature.duckdns.org \
   --agree-tos -m luminuslpa@gmail.com --non-interactive
 ```
 
@@ -327,7 +327,7 @@ sudo ls -la /etc/letsencrypt/live/YOUR_SUBDOMAIN.duckdns.org/
 ```
 
 ```bash
-sudo ls -la /etc/letsencrypt/live/literaturaviva.duckdns.org/
+sudo ls -la /etc/letsencrypt/live/livingliterature.duckdns.org/
 ```
 
 Now create the final HTTPS Nginx config:
@@ -346,6 +346,37 @@ server {
         return 301 https://$host$request_uri;
     }
 }
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name livingliterature.duckdns.org;
+
+    ssl_certificate /etc/letsencrypt/live/livingliterature.duckdns.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/livingliterature.duckdns.org/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:10m;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+
+
 
 server {
     listen 443 ssl http2;
@@ -380,7 +411,7 @@ server {
 server {
     listen 80;
     listen [::]:80;
-    server_name literaturaviva.duckdns.org;
+    server_name livingliterature.duckdns.org;
 
     location / {
         return 301 https://$host$request_uri;
@@ -390,10 +421,10 @@ server {
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name literaturaviva.duckdns.org;
+    server_name livingliterature.duckdns.org;
 
-    ssl_certificate /etc/letsencrypt/live/literaturaviva.duckdns.org/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/literaturaviva.duckdns.org/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/livingliterature.duckdns.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/livingliterature.duckdns.org/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers off;
     ssl_session_timeout 1d;
@@ -437,7 +468,7 @@ sudo certbot renew --dry-run --pre-hook "systemctl stop nginx" --post-hook "syst
 ```
 
 ```bash
-curl -I https://literaturaviva.duckdns.org
+curl -I https://livingliterature.duckdns.org
 sudo certbot renew --dry-run --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"
 ```
 

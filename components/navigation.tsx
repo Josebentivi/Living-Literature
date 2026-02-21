@@ -23,7 +23,7 @@ function isNavItemActive(pathname: string, href: string): boolean {
 function NavItemIcon({ href }: { href: string }): React.JSX.Element {
   if (href === "/") {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.9">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.9">
         <path d="m3 10 9-7 9 7" />
         <path d="M5 9.8V20h14V9.8" />
       </svg>
@@ -32,7 +32,7 @@ function NavItemIcon({ href }: { href: string }): React.JSX.Element {
 
   if (href === "/research") {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.9">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.9">
         <circle cx="10.5" cy="10.5" r="6.5" />
         <path d="m16 16 4.5 4.5" />
       </svg>
@@ -41,7 +41,7 @@ function NavItemIcon({ href }: { href: string }): React.JSX.Element {
 
   if (href === "/library") {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.9">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.9">
         <path d="M4.5 4h6v16h-6z" />
         <path d="M13.5 4h6v16h-6z" />
         <path d="M4.5 8h6" />
@@ -52,7 +52,7 @@ function NavItemIcon({ href }: { href: string }): React.JSX.Element {
 
   if (href === "/how-to-use") {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.9">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.9">
         <path d="M4 7h8" />
         <path d="M4 12h7" />
         <path d="M4 17h9" />
@@ -64,7 +64,7 @@ function NavItemIcon({ href }: { href: string }): React.JSX.Element {
   }
 
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.9">
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.9">
       <circle cx="12" cy="12" r="2.4" />
     </svg>
   );
@@ -99,7 +99,7 @@ function NavLinks({
             className={cn(
               "rounded-xl px-3 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 dark:focus-visible:ring-emerald-400/70",
               location === "sidebar" && "block",
-              compact && "flex h-11 items-center justify-center px-0",
+              compact && "flex h-12 items-center justify-center px-0",
               active
                 ? "bg-blue-100 text-gray-900 dark:bg-emerald-500/20 dark:text-emerald-200"
                 : "text-gray-700 hover:bg-white hover:text-gray-900 dark:text-gray-300 dark:hover:bg-slate-950/30 dark:hover:text-gray-100",
