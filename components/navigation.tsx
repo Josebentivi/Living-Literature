@@ -135,7 +135,7 @@ export function SidebarNav(): React.JSX.Element {
     <aside
       className={cn(
         "hidden border-r border-white/30 bg-white backdrop-blur supports-[backdrop-filter]:bg-white transition-[width,padding] duration-200 dark:border-emerald-500/10 dark:bg-slate-950/40 dark:supports-[backdrop-filter]:bg-slate-950/30 lg:flex lg:min-h-screen lg:flex-col lg:py-6",
-        isCollapsed ? "lg:w-14 lg:px-3" : "lg:w-72 lg:px-6",
+        isCollapsed ? "lg:w-16 lg:px-3" : "lg:w-72 lg:px-6",
       )}
     >
       <div className={cn("mb-6 flex flex-col gap-2", isCollapsed ? "items-center" : "items-start")}>
